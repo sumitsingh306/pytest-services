@@ -6,11 +6,11 @@ def does_vpc_have_flow_logs(ec2_vpc):
     """
     Checks if there are any FlowLogs associated to the VPC
 
-    >> does_vpc_have_flow_logs({'FlowLogs': [0]})
+    >>> does_vpc_have_flow_logs({'FlowLogs': [0]})
     True
-    >> does_vpc_have_flow_logs({'FlowLogs': []})
+    >>> does_vpc_have_flow_logs({'FlowLogs': []})
     False
-    >> does_vpc_have_flow_logs({})
+    >>> does_vpc_have_flow_logs({})
     Traceback (most recent call last):
     ...
     KeyError: 'FlowLogs'
@@ -30,15 +30,15 @@ def does_vpc_subnets_have_flow_logs(ec2_vpc):
     Checks if there are any FlowLogs associated to each subnet within a VPC.
     Returns false if there are no subnets.
 
-    >> does_vpc_subnets_have_flow_logs({'Subnets': [{'FlowLogs': [0]}]})
+    >>> does_vpc_subnets_have_flow_logs({'Subnets': [{'FlowLogs': [0]}]})
     True
-    >> does_vpc_subnets_have_flow_logs({'Subnets': [{'FlowLogs': [0]}, {'FlowLogs': []}]})
+    >>> does_vpc_subnets_have_flow_logs({'Subnets': [{'FlowLogs': [0]}, {'FlowLogs': []}]})
     False
-    >> does_vpc_subnets_have_flow_logs({'Subnets': [{'FlowLogs': []}]})
+    >>> does_vpc_subnets_have_flow_logs({'Subnets': [{'FlowLogs': []}]})
     False
-    >> does_vpc_subnets_have_flow_logs({'Subnets': []})
+    >>> does_vpc_subnets_have_flow_logs({'Subnets': []})
     False
-    >> does_vpc_subnets_have_flow_logs({})
+    >>> does_vpc_subnets_have_flow_logs({})
     Traceback (most recent call last):
     ...
     KeyError: 'Subnets'

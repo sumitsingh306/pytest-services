@@ -6,17 +6,17 @@ def is_ec2_network_acl_in_use(ec2_network_acl):
     """
     Checks the Network ACL for Associations and for if it is the default for it's VPC.
 
-    >> is_ec2_network_acl_in_use({'Associations': [0], 'IsDefault': False})
+    >>> is_ec2_network_acl_in_use({'Associations': [0], 'IsDefault': False})
     True
-    >> is_ec2_network_acl_in_use({'Associations': [], 'IsDefault': True})
+    >>> is_ec2_network_acl_in_use({'Associations': [], 'IsDefault': True})
     True
-    >> is_ec2_network_acl_in_use({'Associations': [], 'IsDefault': False})
+    >>> is_ec2_network_acl_in_use({'Associations': [], 'IsDefault': False})
     False
-    >> is_ec2_network_acl_in_use({})
+    >>> is_ec2_network_acl_in_use({})
     Traceback (most recent call last):
     ...
     KeyError: 'Associations'
-    >> is_ec2_network_acl_in_use(None)
+    >>> is_ec2_network_acl_in_use(None)
     Traceback (most recent call last):
     ...
     TypeError: 'NoneType' object is not subscriptable
